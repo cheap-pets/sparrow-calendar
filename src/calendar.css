@@ -3,7 +3,10 @@
   overflow: hidden;
   background: #fff;
   min-width: 320px;
-  min-height: 272px
+  min-height: 272px;
+}
+.dropdown.calendar {
+  min-width: 375px;
 }
 .calendar-header {
   padding: 15px;
@@ -38,12 +41,13 @@
 .calendar-body th {
   text-align: center;
   height: 28px;
-  line-height: 20px
+  line-height: 20px;
+  padding: 0 5px;
 }
 .calendar-body a {
   display: inline-block;
   border-radius: 10px;
-  padding: 0 15px
+  width: 100%;
 }
 .calendar-body a:active,
 html:not(.mobile) .calendar-body a:hover {

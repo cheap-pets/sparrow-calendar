@@ -1,6 +1,19 @@
 {
   "root": true,
-  "extends": "standard",
+  "extends": [
+    "standard"
+  ],
+  "plugins": [
+    "html",
+    "vue"
+  ],
+  "globals": {
+    "Vue": false,
+    "Vuex": false,
+    "VueRouter": false,
+    "axios": false,
+    "moment": false
+  },
   "env": {
     "browser": true,
     "es6": true
