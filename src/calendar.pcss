@@ -1,0 +1,68 @@
+.calendar {
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  min-width: 320px;
+  min-height: 272px;
+}
+
+.calendar-header {
+  padding: 15px;
+  font-size: 24px;
+  line-height: 30px;
+  color: $yellow2;
+  background: $grey6;
+}
+
+.calendar-header > * {
+  display: inline-block;
+}
+
+.calendar-header > .navi {
+  float: right;
+  font-size: 16px;
+}
+.calendar-header > .navi > a {
+  margin-left: 10px;
+}
+
+.calendar-body {
+  display: none;
+  table-layout: fixed;
+  width: 100%;
+  min-height: 212px;
+}
+
+.calendar-body th {
+  width: 1%;
+  color: $grey3;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.calendar-body th,
+.calendar-body td {
+  text-align: center;
+  height: 28px;
+  line-height: 20px;
+}
+
+.calendar-body a {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 0 15px;
+}
+
+html:not(.mobile) .calendar-body a:hover,
+.calendar-body a:active {
+  background-color: $grey5;
+}
+
+.calendar-body a.today {
+  background-color: $yellow2;
+  color: #fff;
+}
+.calendar-body a.active {
+  background-color: $blue2;
+  color: #fff;
+}
