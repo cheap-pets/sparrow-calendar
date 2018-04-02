@@ -1,4 +1,5 @@
 import devq from 'sparrow-device-query'
+import formatDate from './format-date'
 
 const clickEvent = devq.isMobile ? 'tap' : 'click'
 
@@ -26,13 +27,15 @@ const MONTH_POSTFIX = isZh ? '月' : ''
 // const WEEK_DAY_PREFIX = isZh ? '星期' : ''
 const MAX_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-function dispatchDateChangeEvent () {
+function dispatchDateChangeEvent (event) {
   const e = document.createEvent('CustomEvent')
-  e.initCustomEvent('datecellclick', false, true)
+  e.initCustomEvent('dateselect', false, true)
   e.calendar = this
   e.date = this.date
+  e.dateString = formatDate(this.date)
   this.el.dispatchEvent(e)
-  if (this.ondateselect) this.ondateselect(this.date)
+  event.stopPropagation()
+  if (this.ondateselect) this.ondateselect(e)
 }
 
 function isLeapMonth (year, month) {
@@ -127,15 +130,15 @@ class Calendar {
       for (let j = 0; j < 7; j++) {
         const td = document.createElement('td')
         const cell = document.createElement('a')
-        cell.addEventListener(clickEvent, ({ target }) => {
-          const d = parseInt(target.innerText)
+        cell.addEventListener(clickEvent, (e) => {
+          const d = parseInt(e.target.innerText)
           if (!isNaN(d)) {
             const { year, month } = this.displayDate
             this.date = new Date(year, month, d)
             if (this.activeCell) this.activeCell.classList.remove('active')
-            target.classList.add('active')
-            this.activeCell = target
-            dispatchDateChangeEvent.call(this)
+            e.target.classList.add('active')
+            this.activeCell = e.target
+            dispatchDateChangeEvent.call(this, e)
           }
         })
         td.appendChild(cell)
