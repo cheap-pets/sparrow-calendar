@@ -47,7 +47,7 @@ function daysOfTheMonth (year, month) {
 function parse (date) {
   if (!date) return null
   if (typeof date === 'string') {
-    date = new Date(Date.parse(date.replace(/-/g, '/')))
+    date = new Date(Date.parse(date)) // date.replace(/-/g, '/')
   }
   const month = date.getMonth()
   return {
