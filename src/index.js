@@ -29,7 +29,7 @@ const MAX_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 function dispatchDateChangeEvent (event) {
   const e = document.createEvent('CustomEvent')
-  e.initCustomEvent('dateselect', false, true)
+  e.initCustomEvent('dateselect', false, true, null)
   e.calendar = this
   e.date = this.date
   e.dateString = formatDate(this.date)
