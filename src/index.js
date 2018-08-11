@@ -91,8 +91,7 @@ const today = parse(Date())
 
 class Calendar {
   constructor (options) {
-    const { el } = options || {}
-    this.renderTo(el)
+    this.renderTo(Object(options).el)
   }
   renderTo (el) {
     this.el = typeof el === 'string' ? document.querySelector(el) : el
