@@ -41,31 +41,40 @@
 
 .calendar-body {
   display: none;
+  border: 0;
   table-layout: fixed;
   width: 100%;
   min-height: 212px;
+  border-collapse: collapse;
 }
 
 .calendar-body th {
   width: 1%;
   color: $grey3;
+  height: 28px;
   font-size: 12px;
   font-weight: 600;
+  border: 0;
 }
 
 .calendar-body th,
 .calendar-body td {
   text-align: center;
-  height: 28px;
   line-height: 20px;
   padding: 0 5px;
   font-size: 14px;
+}
+
+.calendar-body td {
+  height: 36px;
+  border-color: rgba(245, 245, 245, 1);
 }
 
 .calendar-body a {
   display: inline-block;
   border-radius: 10px;
   width: 100%;
+  color: rgba(0, 0, 0, .8);
 }
 
 html:not(.mobile) .calendar-body a:hover,

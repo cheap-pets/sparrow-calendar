@@ -13,11 +13,11 @@ const template = `
     <span class="year-hint" style="display: none;"></span>
     <a class="navi-next icon icon-nav-right"></a>
   </div>
-  <table class="calendar-body table-days">
+  <table class="calendar-body table-days" border="1">
     <thead></thead>
     <tbody></tbody>
   </table>
-  <table class="calendar-body table-years">
+  <table class="calendar-body table-years" border="1">
   </table>
 `
 const isZh = (navigator.language || navigator.userLanguage).indexOf('zh') === 0
