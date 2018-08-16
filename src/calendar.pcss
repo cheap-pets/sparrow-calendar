@@ -14,18 +14,29 @@
   line-height: 30px;
   color: $yellow2;
   background: $grey6;
+  text-align: center;
 }
 
 .calendar-header > * {
   display: inline-block;
 }
 
-.calendar-header > .navi {
-  float: right;
+.calendar-header > .navi-prev,
+.calendar-header > .navi-next {
+  width: 50px;
   font-size: 16px;
 }
-.calendar-header > .navi > a {
-  margin-left: 10px;
+
+.calendar-header > .navi-prev {
+  float: left;
+  text-align: left;
+  padding-left: 5px;
+}
+
+.calendar-header > .navi-next {
+  float: right;
+  text-align: right;
+  padding-right: 5px;
 }
 
 .calendar-body {

@@ -63,5 +63,8 @@ typings/
 # VSCode file
 .vscode
 
+# package-lock
+package-lock.json
+
 # Examples Dist
 examples/dist/*

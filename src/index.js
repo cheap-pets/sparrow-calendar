@@ -5,9 +5,13 @@ const clickEvent = devq.isMobile ? 'tap' : 'click'
 
 const template = `
   <div class="calendar-header">
-    <span class="calendar-title"><span class="calendar-year"></span><span class="calendar-month"></span></span>
+    <a class="navi-prev icon icon-nav-left"></a>
+    <span class="calendar-title">
+      <span class="calendar-year"></span>
+      <span class="calendar-month"></span>
+    </span>
     <span class="year-hint" style="display: none;"></span>
-    <span class="navi"><a class="icon icon-nav-left"></a><a class="icon icon-nav-right"></a></span>
+    <a class="navi-next icon icon-nav-right"></a>
   </div>
   <table class="calendar-body table-days">
     <thead></thead>
@@ -106,8 +110,8 @@ class Calendar {
       changeView.call(this, 1)
     })
 
-    const prevMonth = el.querySelector('.icon-nav-left')
-    const nextMonth = el.querySelector('.icon-nav-right')
+    const prevMonth = el.querySelector('.navi-prev')
+    const nextMonth = el.querySelector('.navi-next')
 
     prevMonth.addEventListener(clickEvent, () => {
       navi.call(this, -1)
